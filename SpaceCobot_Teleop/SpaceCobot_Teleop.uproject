@@ -3,47 +3,20 @@
 	"EngineAssociation": "5.4",
 	"Category": "",
 	"Description": "",
-	"Plugins": [
+	"Modules": [
 		{
-			"Name": "OpenXR",
-			"Enabled": true,
-			"SupportedTargetPlatforms": [
-				"Win64",
-				"Linux",
-				"Android"
-			]
-		},
-		{
-			"Name": "OpenXREyeTracker",
-			"Enabled": true,
-			"SupportedTargetPlatforms": [
-				"Win64",
-				"Linux",
-				"Android"
-			]
-		},
-		{
-			"Name": "OpenXRHandTracking",
-			"Enabled": true,
-			"SupportedTargetPlatforms": [
-				"Win64",
-				"Linux",
-				"Android"
-			]
+			"Name": "SpaceCobot_Teleop",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
 		}
 	],
-	"TargetPlatforms": [
-		"Android",
-		"IOS",
-		"Linux",
-		"Mac",
-		"PS4",
-		"PS5",
-		"Windows",
-		"WindowsNoEditor",
-		"Switch",
-		"XboxOne",
-		"XSX",
-		"HoloLens"
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		}
 	]
 }

@@ -1,0 +1,26 @@
+[
+	{
+		"file": "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Source/SpaceCobot_Teleop/SpaceCobot_Teleop.Build.cs",
+		"arguments": [
+			"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++",
+			"@/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/.vscode/compileCommands_Default/SpaceCobot_Teleop.1.rsp"
+		],
+		"directory": "/Users/Shared/UnrealEngine/UE_5.4/Engine/Source"
+	},
+	{
+		"file": "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Source/SpaceCobot_Teleop/SpaceCobot_Teleop.cpp",
+		"arguments": [
+			"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++",
+			"@/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/.vscode/compileCommands_Default/SpaceCobot_Teleop.1.rsp"
+		],
+		"directory": "/Users/Shared/UnrealEngine/UE_5.4/Engine/Source"
+	},
+	{
+		"file": "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Source/SpaceCobot_Teleop/SpaceCobot_Teleop.h",
+		"arguments": [
+			"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++",
+			"@/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/.vscode/compileCommands_Default/SpaceCobot_Teleop.1.rsp"
+		],
+		"directory": "/Users/Shared/UnrealEngine/UE_5.4/Engine/Source"
+	}
+]
