@@ -1,8 +1,0 @@
-{
-	"SourceFiles": [
-		"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Source/SpaceCobot_Teleop/SpaceCobot_Teleop.Build.cs",
-		"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Source/SpaceCobot_Teleop.Target.cs",
-		"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Source/SpaceCobot_TeleopEditor.Target.cs"
-	],
-	"EngineVersion": "5.4.4"
-}
