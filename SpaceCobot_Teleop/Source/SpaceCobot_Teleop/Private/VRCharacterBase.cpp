@@ -21,6 +21,20 @@ void AVRCharacterBase::SetupPlayerInputComponent(
 	UInputComponent* PlayerInputComponent) { Super::SetupPlayerInputComponent(PlayerInputComponent); }
 
 void AVRCharacterBase::CharacterMoveForward(const float Ratio) {
-	const auto CameraProjectedForward = FVector(VRCamera->GetForwardVector().X, VRCamera->GetForwardVector().Y, 0);
+	const auto CameraProjectedForward = FVector(VRCamera->GetForwardVector().X, VRCamera->GetForwardVector().Y, 0).
+		GetSafeNormal();
 	AddActorWorldOffset(CameraProjectedForward * Ratio * MaxSpeed);
+}
+
+void AVRCharacterBase::FindFocusDistance() {
+	const FVector Start = VRCamera->GetComponentLocation();
+	const FVector End = Start + VRCamera->GetForwardVector() * MaxFocusTrackingDistance;
+	FHitResult HitResult;
+	FCameraFocusSettings FocusSettings;
+	FocusSettings.ManualFocusDistance = MaxFocusTrackingDistance;
+
+	if (GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECollisionChannel::ECC_Visibility)) {
+		FocusSettings.ManualFocusDistance = HitResult.Distance;
+		VRCamera->SetFocusSettings(FocusSettings);
+	}
 }

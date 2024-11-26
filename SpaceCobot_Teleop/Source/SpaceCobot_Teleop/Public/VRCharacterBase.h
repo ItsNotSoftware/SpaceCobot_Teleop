@@ -20,6 +20,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Movement")
 	float MaxSpeed = 3.0f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Movement")
+	float MaxFocusTrackingDistance = 10000.0f;
+
 	AVRCharacterBase();
 
 	virtual void Tick(float DeltaTime) override;
@@ -30,4 +33,7 @@ protected:
 
 	UFUNCTION(BlueprintCallable)
 	void CharacterMoveForward(const float Ratio);
+
+	UFUNCTION(BlueprintCallable)
+	void FindFocusDistance();
 };
