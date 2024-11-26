@@ -5,7 +5,16 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Content/StarterContent/Maps/StarterMap_BuiltData.uasset"
+				"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Content/StarterContent/Maps/StarterMap_BuiltData.uasset",
+				"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Content/Levels/L_Sandbox.umap",
+				"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Content/Blueprints/BP_GameModeVR.uasset",
+				"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Content/Blueprints/BP_VRCharacterBase.uasset",
+				"/Users/Shared/UnrealEngine/UE_5.4/Engine/Content/MapTemplates/SM_Template_Map_Floor.uasset",
+				"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Content/Levels/L_Sandbox_BuiltData.uasset",
+				"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Content/Settings/Input/IA_VR_Move.uasset",
+				"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Content/Settings/Input/IMC_VR_Move.uasset",
+				"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Content/Blueprints/B_GameModeBase.uasset",
+				"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Content/Blueprints/BP_GameModeBase.uasset"
 			]
 		}
 	]

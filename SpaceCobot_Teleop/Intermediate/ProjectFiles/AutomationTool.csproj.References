@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ProjectReference Include="Android/Android.Automation.csproj">
+      <Project>{98c7a78d-a844-3484-b83e-aedc50979bfc}</Project>
+      <Name>Android.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="Apple/Apple.Automation.csproj">
+      <Project>{7fffe3d3-2a42-387c-bf8e-610ed0ac5404}</Project>
+      <Name>Apple.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="AutomationUtils/AutomationUtils.Automation.csproj">
+      <Project>{17fca66e-6385-3286-823f-d17b15de24bb}</Project>
+      <Name>AutomationUtils.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="BuildGraph/BuildGraph.Automation.csproj">
+      <Project>{793c3ae8-518c-3d83-adc3-3cbdffed2695}</Project>
+      <Name>BuildGraph.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="CookedEditor/CookedEditor.Automation.csproj">
+      <Project>{79f929ba-b3d0-3290-8011-5f4a2e3c3fc9}</Project>
+      <Name>CookedEditor.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="CrowdinLocalization/CrowdinLocalization.Automation.csproj">
+      <Project>{eb8f6a8c-513a-3012-b924-334289214176}</Project>
+      <Name>CrowdinLocalization.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="Gauntlet/Gauntlet.Automation.csproj">
+      <Project>{4f5f727f-336c-31df-9992-07605a86a201}</Project>
+      <Name>Gauntlet.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="IOS/IOS.Automation.csproj">
+      <Project>{91ce1fcd-2805-3d59-b2d0-6a4e037583ff}</Project>
+      <Name>IOS.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="Linux/Linux.Automation.csproj">
+      <Project>{5bf986db-f321-3d96-8837-998f0a0d7b28}</Project>
+      <Name>Linux.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="Localization/Localization.Automation.csproj">
+      <Project>{5fe86988-5139-3b54-988b-52f4c08e065b}</Project>
+      <Name>Localization.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="LowLevelTests/LowLevelTests.Automation.csproj">
+      <Project>{2519ee4e-a9bf-323c-b47c-9c3182fe9533}</Project>
+      <Name>LowLevelTests.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="Mac/Mac.Automation.csproj">
+      <Project>{ffd2d3c0-10be-368b-98c3-54d46e1b00ee}</Project>
+      <Name>Mac.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="OneSkyLocalization/OneSkyLocalization.Automation.csproj">
+      <Project>{0ff97a17-eca2-3bb2-b123-e62517ca3348}</Project>
+      <Name>OneSkyLocalization.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="Scripts/AutomationScripts.Automation.csproj">
+      <Project>{afdab6bd-fc95-360a-93a2-5dc22aeca2fb}</Project>
+      <Name>AutomationScripts.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="SmartlingLocalization/SmartlingLocalization.Automation.csproj">
+      <Project>{d3e1fbec-bb7c-34f2-b637-4378e54b362f}</Project>
+      <Name>SmartlingLocalization.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="SteamDeck/SteamDeck.Automation.csproj">
+      <Project>{cc02a0ad-6427-352c-814a-9dedc7a323cf}</Project>
+      <Name>SteamDeck.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="TVOS/TVOS.Automation.csproj">
+      <Project>{128891dc-169e-3966-9dc5-72f3b7f19357}</Project>
+      <Name>TVOS.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="Turnkey/Turnkey.Automation.csproj">
+      <Project>{933dec95-e41b-3a54-bfcf-ffe322012b16}</Project>
+      <Name>Turnkey.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="Win/Win.Automation.csproj">
+      <Project>{37a166fd-9644-301c-8aa5-00ca918d57ac}</Project>
+      <Name>Win.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="XLocLocalization/XLocLocalization.Automation.csproj">
+      <Project>{8c1ec812-d824-330d-8595-ef1937581c2d}</Project>
+      <Name>XLocLocalization.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="../../../Platforms/VisionOS/Source/Programs/AutomationTool/VisionOS.Automation.csproj">
+      <Project>{51d7ce68-1a50-322d-a090-b257af9f7aaa}</Project>
+      <Name>VisionOS.Automation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Target Name="CleanUpStaleDlls" AfterTargets="Build">
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Android.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Android.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Android.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Apple.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Apple.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Apple.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/AutomationUtils.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/AutomationUtils.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/AutomationUtils.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/BuildGraph.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/BuildGraph.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/BuildGraph.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/CookedEditor.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/CookedEditor.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/CookedEditor.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/CrowdinLocalization.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/CrowdinLocalization.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/CrowdinLocalization.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Gauntlet.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Gauntlet.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Gauntlet.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/IOS.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/IOS.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/IOS.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Linux.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Linux.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Linux.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Localization.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Localization.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Localization.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/LowLevelTests.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/LowLevelTests.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/LowLevelTests.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Mac.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Mac.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Mac.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/OneSkyLocalization.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/OneSkyLocalization.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/OneSkyLocalization.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/AutomationScripts.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/AutomationScripts.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/AutomationScripts.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/SmartlingLocalization.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/SmartlingLocalization.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/SmartlingLocalization.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/SteamDeck.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/SteamDeck.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/SteamDeck.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/TVOS.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/TVOS.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/TVOS.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Turnkey.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Turnkey.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Turnkey.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Win.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Win.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/Win.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/XLocLocalization.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/XLocLocalization.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/XLocLocalization.Automation.pdb" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/VisionOS.Automation.dll" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/VisionOS.Automation.dll.config" />
+    <Delete Files="/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/DotNET/AutomationTool/VisionOS.Automation.pdb" />
+  </Target>
+</Project>

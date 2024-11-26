@@ -1,574 +1,551 @@
 {
-	"folders": [
-		{
-			"name": "SpaceCobot_Teleop",
-			"path": "."
-		},
-		{
-			"name": "UE5",
-			"path": "/Users/Shared/UnrealEngine/UE_5.4"
-		}
-	],
-	"settings": {
-		"typescript.tsc.autoDetect": "off",
-		"npm.autoDetect": "off"
-	},
-	"extensions": {
-		"recommendations": [
-			"ms-vscode.cpptools",
-			"ms-dotnettools.csharp"
-		]
-	},
-	"tasks": {
-		"version": "2.0.0",
-		"tasks": [
-			{
-				"label": "SpaceCobot_Teleop Mac Debug Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"Debug",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_Teleop Mac Debug Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"Debug",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"SpaceCobot_Teleop Mac Debug Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_Teleop Mac Debug Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"Debug",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_Teleop Mac DebugGame Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"DebugGame",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_Teleop Mac DebugGame Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"DebugGame",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"SpaceCobot_Teleop Mac DebugGame Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_Teleop Mac DebugGame Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"DebugGame",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_Teleop Mac Development Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"Development",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_Teleop Mac Development Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"Development",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"SpaceCobot_Teleop Mac Development Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_Teleop Mac Development Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"Development",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_Teleop Mac Test Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"Test",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_Teleop Mac Test Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"Test",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"SpaceCobot_Teleop Mac Test Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_Teleop Mac Test Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"Test",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_Teleop Mac Shipping Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"Shipping",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_Teleop Mac Shipping Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"Shipping",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"SpaceCobot_Teleop Mac Shipping Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_Teleop Mac Shipping Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_Teleop",
-					"Mac",
-					"Shipping",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_TeleopEditor Mac Debug Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_TeleopEditor",
-					"Mac",
-					"Debug",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_TeleopEditor Mac Debug Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_TeleopEditor",
-					"Mac",
-					"Debug",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"SpaceCobot_TeleopEditor Mac Debug Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_TeleopEditor Mac Debug Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_TeleopEditor",
-					"Mac",
-					"Debug",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_TeleopEditor Mac DebugGame Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_TeleopEditor",
-					"Mac",
-					"DebugGame",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_TeleopEditor Mac DebugGame Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_TeleopEditor",
-					"Mac",
-					"DebugGame",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"SpaceCobot_TeleopEditor Mac DebugGame Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_TeleopEditor Mac DebugGame Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_TeleopEditor",
-					"Mac",
-					"DebugGame",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_TeleopEditor Mac Development Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_TeleopEditor",
-					"Mac",
-					"Development",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_TeleopEditor Mac Development Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_TeleopEditor",
-					"Mac",
-					"Development",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"SpaceCobot_TeleopEditor Mac Development Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			},
-			{
-				"label": "SpaceCobot_TeleopEditor Mac Development Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"SpaceCobot_TeleopEditor",
-					"Mac",
-					"Development",
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-				}
-			}
-		]
-	},
-	"launch": {
-		"version": "0.2.0",
-		"configurations": [
-			{
-				"name": "Launch SpaceCobot_Teleop (Debug)",
-				"request": "launch",
-				"program": "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Mac/UnrealGame-Mac-Debug.app/Contents/MacOS/UnrealGame-Mac-Debug",
-				"preLaunchTask": "SpaceCobot_Teleop Mac Debug Build",
-				"args": [
-				],
-				"cwd": "/Users/Shared/UnrealEngine/UE_5.4",
-				"type": "lldb"
-			},
-			{
-				"name": "Launch SpaceCobot_Teleop (DebugGame)",
-				"request": "launch",
-				"program": "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Mac/UnrealGame-Mac-DebugGame.app/Contents/MacOS/UnrealGame-Mac-DebugGame",
-				"preLaunchTask": "SpaceCobot_Teleop Mac DebugGame Build",
-				"args": [
-				],
-				"cwd": "/Users/Shared/UnrealEngine/UE_5.4",
-				"type": "lldb"
-			},
-			{
-				"name": "Launch SpaceCobot_Teleop (Development)",
-				"request": "launch",
-				"program": "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Mac/UnrealGame.app/Contents/MacOS/UnrealGame",
-				"preLaunchTask": "SpaceCobot_Teleop Mac Development Build",
-				"args": [
-				],
-				"cwd": "/Users/Shared/UnrealEngine/UE_5.4",
-				"type": "lldb"
-			},
-			{
-				"name": "Launch SpaceCobot_Teleop (Test)",
-				"request": "launch",
-				"program": "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Mac/UnrealGame-Mac-Test.app/Contents/MacOS/UnrealGame-Mac-Test",
-				"preLaunchTask": "SpaceCobot_Teleop Mac Test Build",
-				"args": [
-				],
-				"cwd": "/Users/Shared/UnrealEngine/UE_5.4",
-				"type": "lldb"
-			},
-			{
-				"name": "Launch SpaceCobot_Teleop (Shipping)",
-				"request": "launch",
-				"program": "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Mac/UnrealGame-Mac-Shipping.app/Contents/MacOS/UnrealGame-Mac-Shipping",
-				"preLaunchTask": "SpaceCobot_Teleop Mac Shipping Build",
-				"args": [
-				],
-				"cwd": "/Users/Shared/UnrealEngine/UE_5.4",
-				"type": "lldb"
-			},
-			{
-				"name": "Launch SpaceCobot_TeleopEditor (Debug)",
-				"request": "launch",
-				"program": "/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/Mac/UnrealEditor-Mac-Debug.app/Contents/MacOS/UnrealEditor-Mac-Debug",
-				"preLaunchTask": "SpaceCobot_TeleopEditor Mac Debug Build",
-				"args": [
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject"
-				],
-				"cwd": "/Users/Shared/UnrealEngine/UE_5.4",
-				"type": "lldb"
-			},
-			{
-				"name": "Launch SpaceCobot_TeleopEditor (DebugGame)",
-				"request": "launch",
-				"program": "/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/Mac/UnrealEditor-Mac-DebugGame.app/Contents/MacOS/UnrealEditor-Mac-DebugGame",
-				"preLaunchTask": "SpaceCobot_TeleopEditor Mac DebugGame Build",
-				"args": [
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject"
-				],
-				"cwd": "/Users/Shared/UnrealEngine/UE_5.4",
-				"type": "lldb"
-			},
-			{
-				"name": "Launch SpaceCobot_TeleopEditor (Development)",
-				"request": "launch",
-				"program": "/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor",
-				"preLaunchTask": "SpaceCobot_TeleopEditor Mac Development Build",
-				"args": [
-					"/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject"
-				],
-				"cwd": "/Users/Shared/UnrealEngine/UE_5.4",
-				"type": "lldb"
-			},
-			{
-				"name": "Generate Project Files",
-				"type": "coreclr",
-				"request": "launch",
-				"preLaunchTask": "UnrealBuildTool Mac Development Build",
-				"program": "/Users/Shared/UnrealEngine/UE_5.4/Engine/Build/BatchFiles/RunUBT.bat",
-				"args": [
-					"-projectfiles",
-					"-vscode",
-					"-project=/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
-					"-game",
-					"-engine",
-					"-dotnet"
-				],
-				"console": "internalConsole",
-				"internalConsoleOptions": "openOnSessionStart",
-				"stopAtEntry": false,
-				"cwd": "/Users/Shared/UnrealEngine/UE_5.4"
-			}
-		]
-	}
+    "folders": [
+        {
+            "name": "SpaceCobot_Teleop",
+            "path": "."
+        },
+        {
+            "name": "UE5",
+            "path": "/Users/Shared/UnrealEngine/UE_5.4"
+        }
+    ],
+    "settings": {
+        "typescript.tsc.autoDetect": "off",
+        "npm.autoDetect": "off",
+        "dotnet.defaultSolution": "disable"
+    },
+    "extensions": {
+        "recommendations": ["ms-vscode.cpptools", "ms-dotnettools.csharp"]
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "SpaceCobot_Teleop Mac Debug Build",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "Debug",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_Teleop Mac Debug Rebuild",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "Debug",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "dependsOn": ["SpaceCobot_Teleop Mac Debug Clean"],
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_Teleop Mac Debug Clean",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "Debug",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex",
+                    "-clean"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_Teleop Mac DebugGame Build",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "DebugGame",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_Teleop Mac DebugGame Rebuild",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "DebugGame",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "dependsOn": ["SpaceCobot_Teleop Mac DebugGame Clean"],
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_Teleop Mac DebugGame Clean",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "DebugGame",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex",
+                    "-clean"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_Teleop Mac Development Build",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "Development",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_Teleop Mac Development Rebuild",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "Development",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "dependsOn": ["SpaceCobot_Teleop Mac Development Clean"],
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_Teleop Mac Development Clean",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "Development",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex",
+                    "-clean"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_Teleop Mac Test Build",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "Test",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_Teleop Mac Test Rebuild",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "Test",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "dependsOn": ["SpaceCobot_Teleop Mac Test Clean"],
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_Teleop Mac Test Clean",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "Test",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex",
+                    "-clean"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_Teleop Mac Shipping Build",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "Shipping",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_Teleop Mac Shipping Rebuild",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "Shipping",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "dependsOn": ["SpaceCobot_Teleop Mac Shipping Clean"],
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_Teleop Mac Shipping Clean",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_Teleop",
+                    "Mac",
+                    "Shipping",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex",
+                    "-clean"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_TeleopEditor Mac Debug Build",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_TeleopEditor",
+                    "Mac",
+                    "Debug",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_TeleopEditor Mac Debug Rebuild",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_TeleopEditor",
+                    "Mac",
+                    "Debug",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "dependsOn": ["SpaceCobot_TeleopEditor Mac Debug Clean"],
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_TeleopEditor Mac Debug Clean",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_TeleopEditor",
+                    "Mac",
+                    "Debug",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex",
+                    "-clean"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_TeleopEditor Mac DebugGame Build",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_TeleopEditor",
+                    "Mac",
+                    "DebugGame",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_TeleopEditor Mac DebugGame Rebuild",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_TeleopEditor",
+                    "Mac",
+                    "DebugGame",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "dependsOn": ["SpaceCobot_TeleopEditor Mac DebugGame Clean"],
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_TeleopEditor Mac DebugGame Clean",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_TeleopEditor",
+                    "Mac",
+                    "DebugGame",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex",
+                    "-clean"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_TeleopEditor Mac Development Build",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_TeleopEditor",
+                    "Mac",
+                    "Development",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_TeleopEditor Mac Development Rebuild",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_TeleopEditor",
+                    "Mac",
+                    "Development",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex"
+                ],
+                "problemMatcher": "$msCompile",
+                "dependsOn": ["SpaceCobot_TeleopEditor Mac Development Clean"],
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            },
+            {
+                "label": "SpaceCobot_TeleopEditor Mac Development Clean",
+                "group": "build",
+                "command": "Engine/Build/BatchFiles/Mac/Build.sh",
+                "args": [
+                    "SpaceCobot_TeleopEditor",
+                    "Mac",
+                    "Development",
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-waitmutex",
+                    "-clean"
+                ],
+                "problemMatcher": "$msCompile",
+                "type": "shell",
+                "options": {
+                    "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+                }
+            }
+        ]
+    },
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Launch SpaceCobot_Teleop (Debug)",
+                "request": "launch",
+                "program": "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Mac/UnrealGame-Mac-Debug.app/Contents/MacOS/UnrealGame-Mac-Debug",
+                "preLaunchTask": "SpaceCobot_Teleop Mac Debug Build",
+                "args": [],
+                "cwd": "/Users/Shared/UnrealEngine/UE_5.4",
+                "type": "lldb"
+            },
+            {
+                "name": "Launch SpaceCobot_Teleop (DebugGame)",
+                "request": "launch",
+                "program": "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Mac/UnrealGame-Mac-DebugGame.app/Contents/MacOS/UnrealGame-Mac-DebugGame",
+                "preLaunchTask": "SpaceCobot_Teleop Mac DebugGame Build",
+                "args": [],
+                "cwd": "/Users/Shared/UnrealEngine/UE_5.4",
+                "type": "lldb"
+            },
+            {
+                "name": "Launch SpaceCobot_Teleop (Development)",
+                "request": "launch",
+                "program": "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Mac/UnrealGame.app/Contents/MacOS/UnrealGame",
+                "preLaunchTask": "SpaceCobot_Teleop Mac Development Build",
+                "args": [],
+                "cwd": "/Users/Shared/UnrealEngine/UE_5.4",
+                "type": "lldb"
+            },
+            {
+                "name": "Launch SpaceCobot_Teleop (Test)",
+                "request": "launch",
+                "program": "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Mac/UnrealGame-Mac-Test.app/Contents/MacOS/UnrealGame-Mac-Test",
+                "preLaunchTask": "SpaceCobot_Teleop Mac Test Build",
+                "args": [],
+                "cwd": "/Users/Shared/UnrealEngine/UE_5.4",
+                "type": "lldb"
+            },
+            {
+                "name": "Launch SpaceCobot_Teleop (Shipping)",
+                "request": "launch",
+                "program": "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Mac/UnrealGame-Mac-Shipping.app/Contents/MacOS/UnrealGame-Mac-Shipping",
+                "preLaunchTask": "SpaceCobot_Teleop Mac Shipping Build",
+                "args": [],
+                "cwd": "/Users/Shared/UnrealEngine/UE_5.4",
+                "type": "lldb"
+            },
+            {
+                "name": "Launch SpaceCobot_TeleopEditor (Debug)",
+                "request": "launch",
+                "program": "/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/Mac/UnrealEditor-Mac-Debug.app/Contents/MacOS/UnrealEditor-Mac-Debug",
+                "preLaunchTask": "SpaceCobot_TeleopEditor Mac Debug Build",
+                "args": [
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject"
+                ],
+                "cwd": "/Users/Shared/UnrealEngine/UE_5.4",
+                "type": "lldb"
+            },
+            {
+                "name": "Launch SpaceCobot_TeleopEditor (DebugGame)",
+                "request": "launch",
+                "program": "/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/Mac/UnrealEditor-Mac-DebugGame.app/Contents/MacOS/UnrealEditor-Mac-DebugGame",
+                "preLaunchTask": "SpaceCobot_TeleopEditor Mac DebugGame Build",
+                "args": [
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject"
+                ],
+                "cwd": "/Users/Shared/UnrealEngine/UE_5.4",
+                "type": "lldb"
+            },
+            {
+                "name": "Launch SpaceCobot_TeleopEditor (Development)",
+                "request": "launch",
+                "program": "/Users/Shared/UnrealEngine/UE_5.4/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor",
+                "preLaunchTask": "SpaceCobot_TeleopEditor Mac Development Build",
+                "args": [
+                    "/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject"
+                ],
+                "cwd": "/Users/Shared/UnrealEngine/UE_5.4",
+                "type": "lldb"
+            },
+            {
+                "name": "Generate Project Files",
+                "type": "coreclr",
+                "request": "launch",
+                "preLaunchTask": "UnrealBuildTool Mac Development Build",
+                "program": "/Users/Shared/UnrealEngine/UE_5.4/Engine/Build/BatchFiles/RunUBT.bat",
+                "args": [
+                    "-projectfiles",
+                    "-vscode",
+                    "-project=/Users/diogoferreira/CodeWs/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+                    "-game",
+                    "-engine",
+                    "-dotnet"
+                ],
+                "console": "internalConsole",
+                "internalConsoleOptions": "openOnSessionStart",
+                "stopAtEntry": false,
+                "cwd": "/Users/Shared/UnrealEngine/UE_5.4"
+            }
+        ]
+    }
 }

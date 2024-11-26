@@ -230,6 +230,10 @@
 			"Type": "DynamicLibrary"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/Mac/UnrealEditor-AugmentedReality.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/Mac/UnrealEditor-AutomationController.dylib",
 			"Type": "DynamicLibrary"
 		},
@@ -703,6 +707,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Mac/UnrealEditor-InputCore.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Mac/UnrealEditor-InputDevice.dylib",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -2726,6 +2734,38 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Mac/UnrealEditor-RD.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Mac/UnrealEditor-RiderBlueprint.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Mac/UnrealEditor-RiderGameControl.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Mac/UnrealEditor-RiderLC.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Mac/UnrealEditor-RiderLink.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Mac/UnrealEditor-RiderLogging.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Mac/UnrealEditor-RiderShaderInfo.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Mac/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Media/AndroidMedia/Binaries/Mac/UnrealEditor-AndroidMediaEditor.dylib",
 			"Type": "DynamicLibrary"
 		},
@@ -3286,6 +3326,26 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Runtime/OpenXR/Binaries/Mac/UnrealEditor-OpenXRAR.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/OpenXR/Binaries/Mac/UnrealEditor-OpenXREditor.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/OpenXR/Binaries/Mac/UnrealEditor-OpenXRHMD.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/OpenXR/Binaries/Mac/UnrealEditor-OpenXRInput.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/OpenXR/Binaries/Mac/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ProceduralMeshComponent/Binaries/Mac/UnrealEditor-ProceduralMeshComponent.dylib",
 			"Type": "DynamicLibrary"
 		},
@@ -3379,6 +3439,18 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/WebMMoviePlayer/Binaries/Mac/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/XRBase/Binaries/Mac/UnrealEditor-XRBase.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/XRBase/Binaries/Mac/UnrealEditor-XRBaseEditor.dylib",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/XRBase/Binaries/Mac/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -22312,6 +22384,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/RiderLink.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Media/AndroidMedia/AndroidMedia.uplugin",
 			"Type": "UFS"
 		},
@@ -22508,6 +22584,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Runtime/OpenXR/OpenXR.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ProceduralMeshComponent/ProceduralMeshComponent.uplugin",
 			"Type": "UFS"
 		},
@@ -22541,6 +22621,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/WebMMoviePlayer/WebMMoviePlayer.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/XRBase/XRBase.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -22685,6 +22769,7 @@
 		"OnlineSubsystemUtils",
 		"OodleNetwork",
 		"OpenImageDenoise",
+		"OpenXR",
 		"Paper2D",
 		"PerforceSourceControl",
 		"PixWinPlugin",
@@ -22702,6 +22787,7 @@
 		"RenderDocPlugin",
 		"RenderGraphInsights",
 		"ResonanceAudio",
+		"RiderLink",
 		"RiderSourceCodeAccess",
 		"RigVM",
 		"SequencerAnimTools",
@@ -22738,7 +22824,8 @@
 		"WorldPartitionHLODUtilities",
 		"XCodeSourceCodeAccess",
 		"XGEController",
-		"XInputDevice"
+		"XInputDevice",
+		"XRBase"
 	],
 	"AdditionalProperties": [
 		{
