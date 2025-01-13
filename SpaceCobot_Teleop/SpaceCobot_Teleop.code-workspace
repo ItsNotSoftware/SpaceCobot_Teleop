@@ -1,0 +1,879 @@
+{
+	"folders": [
+		{
+			"name": "SpaceCobot_Teleop",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off",
+		"terminal.integrated.env.linux": {
+			"PATH": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64:${env:PATH}",
+			"DOTNET_ROOT": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64",
+			"DOTNET_HOST_PATH": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64/dotnet",
+			"DOTNET_MULTILEVEL_LOOKUP": "0",
+			"DOTNET_ROLL_FORWARD": "LatestMajor"
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "SpaceCobot_Teleop Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"Debug",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"Debug",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SpaceCobot_Teleop Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"Debug",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"DebugGame",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"DebugGame",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SpaceCobot_Teleop Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"DebugGame",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"Development",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"Development",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SpaceCobot_Teleop Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"Development",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop Linux Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"Test",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop Linux Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"Test",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SpaceCobot_Teleop Linux Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop Linux Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"Test",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop Linux Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"Shipping",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop Linux Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"Shipping",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SpaceCobot_Teleop Linux Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop Linux Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"Linux",
+					"Shipping",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"Debug",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"Debug",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SpaceCobot_Teleop LinuxArm64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"Debug",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SpaceCobot_Teleop LinuxArm64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"Development",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"Development",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SpaceCobot_Teleop LinuxArm64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"Development",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"Test",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"Test",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SpaceCobot_Teleop LinuxArm64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"Test",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"Shipping",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"Shipping",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SpaceCobot_Teleop LinuxArm64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_Teleop LinuxArm64 Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_Teleop",
+					"LinuxArm64",
+					"Shipping",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_TeleopEditor Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_TeleopEditor",
+					"Linux",
+					"Debug",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_TeleopEditor Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_TeleopEditor",
+					"Linux",
+					"Debug",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SpaceCobot_TeleopEditor Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_TeleopEditor Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_TeleopEditor",
+					"Linux",
+					"Debug",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_TeleopEditor Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_TeleopEditor",
+					"Linux",
+					"DebugGame",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_TeleopEditor Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_TeleopEditor",
+					"Linux",
+					"DebugGame",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SpaceCobot_TeleopEditor Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_TeleopEditor Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_TeleopEditor",
+					"Linux",
+					"DebugGame",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_TeleopEditor Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_TeleopEditor",
+					"Linux",
+					"Development",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_TeleopEditor Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_TeleopEditor",
+					"Linux",
+					"Development",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"SpaceCobot_TeleopEditor Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			},
+			{
+				"label": "SpaceCobot_TeleopEditor Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"SpaceCobot_TeleopEditor",
+					"Linux",
+					"Development",
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch SpaceCobot_Teleop (Debug)",
+				"request": "launch",
+				"program": "/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Linux/UnrealGame-Linux-Debug",
+				"preLaunchTask": "SpaceCobot_Teleop Linux Debug Build",
+				"args": [
+				],
+				"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1",
+				"type": "cppdbg",
+				"visualizerFile": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch SpaceCobot_Teleop (DebugGame)",
+				"request": "launch",
+				"program": "/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Linux/UnrealGame-Linux-DebugGame",
+				"preLaunchTask": "SpaceCobot_Teleop Linux DebugGame Build",
+				"args": [
+				],
+				"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1",
+				"type": "cppdbg",
+				"visualizerFile": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch SpaceCobot_Teleop (Development)",
+				"request": "launch",
+				"program": "/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Linux/UnrealGame",
+				"preLaunchTask": "SpaceCobot_Teleop Linux Development Build",
+				"args": [
+				],
+				"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1",
+				"type": "cppdbg",
+				"visualizerFile": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch SpaceCobot_Teleop (Test)",
+				"request": "launch",
+				"program": "/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Linux/UnrealGame-Linux-Test",
+				"preLaunchTask": "SpaceCobot_Teleop Linux Test Build",
+				"args": [
+				],
+				"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1",
+				"type": "cppdbg",
+				"visualizerFile": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch SpaceCobot_Teleop (Shipping)",
+				"request": "launch",
+				"program": "/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/Binaries/Linux/UnrealGame-Linux-Shipping",
+				"preLaunchTask": "SpaceCobot_Teleop Linux Shipping Build",
+				"args": [
+				],
+				"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1",
+				"type": "cppdbg",
+				"visualizerFile": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch SpaceCobot_TeleopEditor (Debug)",
+				"request": "launch",
+				"program": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Binaries/Linux/UnrealEditor-Linux-Debug",
+				"preLaunchTask": "SpaceCobot_TeleopEditor Linux Debug Build",
+				"args": [
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject"
+				],
+				"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1",
+				"type": "cppdbg",
+				"visualizerFile": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch SpaceCobot_TeleopEditor (DebugGame)",
+				"request": "launch",
+				"program": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Binaries/Linux/UnrealEditor-Linux-DebugGame",
+				"preLaunchTask": "SpaceCobot_TeleopEditor Linux DebugGame Build",
+				"args": [
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject"
+				],
+				"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1",
+				"type": "cppdbg",
+				"visualizerFile": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch SpaceCobot_TeleopEditor (Development)",
+				"request": "launch",
+				"program": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Binaries/Linux/UnrealEditor",
+				"preLaunchTask": "SpaceCobot_TeleopEditor Linux Development Build",
+				"args": [
+					"/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject"
+				],
+				"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1",
+				"type": "cppdbg",
+				"visualizerFile": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Linux Development Build",
+				"program": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Build/BatchFiles/RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=/home/diogo/repos/SpaceCobot_Teleop/SpaceCobot_Teleop/SpaceCobot_Teleop.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"env": {
+					"PATH": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64:${env:PATH}",
+					"DOTNET_ROOT": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64",
+					"DOTNET_HOST_PATH": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64/dotnet",
+					"DOTNET_MULTILEVEL_LOOKUP": "0",
+					"DOTNET_ROLL_FORWARD": "LatestMajor"
+				},
+				"console": "internalConsole",
+				"internalConsoleOptions": "openOnSessionStart",
+				"stopAtEntry": false,
+				"cwd": "/home/diogo/Applications/Linux_Unreal_Engine_5.5.1"
+			}
+		]
+	}
+}
