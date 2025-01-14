@@ -8,9 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78073983-5378-4c11-a1b6-6a8e315473bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCobot_Teleop.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCobot_Teleop.uproject" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Private/AvatarController.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Public/AvatarController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.clang-format" beforeDir="false" afterPath="$PROJECT_DIR$/.clang-format" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceCobot_Teleop.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpaceCobot_Teleop.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Sandbox.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Sandbox.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Private/ASpaceCobotAvatar.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Private/SpaceCobotAvatar.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Public/ASpaceCobotAvatar.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Public/SpaceCobotAvatar.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +28,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/Applications/Linux_Unreal_Engine_5.5.1/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Public/EnhancedInputComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Applications/Linux_Unreal_Engine_5.5.1/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Public/InputTriggers.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Applications/Linux_Unreal_Engine_5.5.1/Engine/Source/Runtime/Engine/Classes/Components/InputComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SpaceCobot_Teleop/Private/SpaceCobotAvatar.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SpaceCobot_Teleop/Public/SpaceCobotAvatar.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -35,6 +42,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2rcl7ap4n12xkE3uuq5nZvDLVbd" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -51,7 +61,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "rider.code.cleanup.on.save": "true",
-    "settings.editor.selected.configurable": "actions.on.save",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C/C++",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -204,7 +214,8 @@
       <option name="presentableId" value="Default" />
       <updated>1736866077979</updated>
       <workItem from="1736866080392" duration="1802000" />
-      <workItem from="1736867893183" duration="3320000" />
+      <workItem from="1736867893183" duration="11981000" />
+      <workItem from="1736887298138" duration="5154000" />
     </task>
     <servers />
   </component>
@@ -214,17 +225,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/SpaceCobot_Teleop/Private/ASpaceCobotAvatar.cpp</url>
-          <line>15</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

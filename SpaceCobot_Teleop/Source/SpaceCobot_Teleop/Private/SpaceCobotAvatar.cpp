@@ -1,7 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
-
-#include "ASpaceCobotAvatar.h"
+#include "SpaceCobotAvatar.h"
 
 // Sets default values
 ASpaceCobotAvatar::ASpaceCobotAvatar() {

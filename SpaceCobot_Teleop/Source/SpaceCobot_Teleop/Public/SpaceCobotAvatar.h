@@ -1,11 +1,14 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "ASpaceCobotAvatar.generated.h"
+#include "SpaceCobotAvatar.generated.h"
 
+/**
+ * SpaceCobot's Avatar for user to control.
+ * The idea is to control a simple "ghost" avatar in real time while behind the scenes the real
+ * robot will try to follow the avatar's path.
+ */
 UCLASS()
 class SPACECOBOT_TELEOP_API ASpaceCobotAvatar : public ACharacter {
     GENERATED_BODY()
@@ -13,10 +16,9 @@ class SPACECOBOT_TELEOP_API ASpaceCobotAvatar : public ACharacter {
 public:
     ASpaceCobotAvatar();
 
-protected:
-    virtual void BeginPlay() override;
-
-public:
     virtual void Tick(float DeltaTime) override;
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+protected:
+    virtual void BeginPlay() override;
 };
