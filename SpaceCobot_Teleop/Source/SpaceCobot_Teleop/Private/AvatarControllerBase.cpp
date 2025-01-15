@@ -1,9 +1,9 @@
-#include "AvatarController.h"
+#include "AvatarControllerBase.h"
 #include "SpaceCobotAvatar.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 
-void AAvatarController::OnPossess(APawn* InPawn) {
+void AAvatarControllerBase::OnPossess(APawn* InPawn) {
     Super::OnPossess(InPawn);
 
     // Store a reference to the avatar we are controlling
@@ -30,22 +30,22 @@ void AAvatarController::OnPossess(APawn* InPawn) {
     // Bind the move action functions if set in the editor
     if (ActionMove) {
         EnhancedInputComponent->BindAction(
-            ActionMove, ETriggerEvent::Triggered, this, &AAvatarController::HandleMove);
+            ActionMove, ETriggerEvent::Triggered, this, &AAvatarControllerBase::HandleMove);
     }
 
     // Bind the look action functions if set in the editor
     if (ActionLook) {
         EnhancedInputComponent->BindAction(
-            ActionLook, ETriggerEvent::Triggered, this, &AAvatarController::HandleLook);
+            ActionLook, ETriggerEvent::Triggered, this, &AAvatarControllerBase::HandleLook);
     }
 }
 
-void AAvatarController::OnUnPossess() {
+void AAvatarControllerBase::OnUnPossess() {
     EnhancedInputComponent->ClearActionBindings(); 
     Super::OnUnPossess();
 }
 
-void AAvatarController::HandleLook(const FInputActionValue& InputActionValue) {
+void AAvatarControllerBase::HandleLook(const FInputActionValue& InputActionValue) {
     const FVector2D LookVector = InputActionValue.Get<FVector2D>();
 
     // Add yaw and pitch input to controller. 
@@ -54,7 +54,7 @@ void AAvatarController::HandleLook(const FInputActionValue& InputActionValue) {
 }
 
 
-void AAvatarController::HandleMove(const FInputActionValue& InputActionValue) {
+void AAvatarControllerBase::HandleMove(const FInputActionValue& InputActionValue) {
     // Get input value.
     const FVector2d MovementVector = InputActionValue.Get<FVector2d>();
 

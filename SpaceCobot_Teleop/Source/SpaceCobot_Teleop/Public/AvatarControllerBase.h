@@ -4,7 +4,7 @@
 #include "InputAction.h"
 #include "InputActionValue.h"
 #include "GameFramework/PlayerController.h"
-#include "AvatarController.generated.h"
+#include "AvatarControllerBase.generated.h"
 
 // Forward declarations
 class ASpaceCobotAvatar;
@@ -21,7 +21,7 @@ class UInputMappingContext;
  * - YouTube Tutorial: https://www.youtube.com/watch?v=GyxIqgith_M
  */
 UCLASS(Abstract)
-class SPACECOBOT_TELEOP_API AAvatarController : public APlayerController {
+class SPACECOBOT_TELEOP_API AAvatarControllerBase : public APlayerController {
     GENERATED_BODY()
 
 public:
