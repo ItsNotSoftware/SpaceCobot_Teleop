@@ -2,65 +2,91 @@
 #include "SpaceCobotAvatar.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "Camera/CameraComponent.h"
 
 void AAvatarControllerBase::OnPossess(APawn* InPawn) {
     Super::OnPossess(InPawn);
 
-    // Store a reference to the avatar we are controlling
+    // Validate and store a reference to the possessed pawn as SpaceCobotAvatar
     SpaceCobotAvatar = Cast<ASpaceCobotAvatar>(InPawn);
-    checkf(
-        SpaceCobotAvatar, TEXT("AAvatarController::OnPossess: InPawn is not a ASpaceCobotAvatar."));
+    checkf(SpaceCobotAvatar, TEXT("InPawn is not a valid ASpaceCobotAvatar."));
 
-    // Get the InputComponent component from parent class and cast it to EnhancedInputController
+    // Get and validate the Enhanced Input Component
     EnhancedInputComponent = Cast<UEnhancedInputComponent>(InputComponent);
-    checkf(
-        EnhancedInputComponent,
-        TEXT("AAvatarController::OnPossess: InputComponent is not a UEnhancedInputComponent."));
+    checkf(EnhancedInputComponent, TEXT("InputComponent is not a valid UEnhancedInputComponent."));
 
-    // Get the local player subsystem
-    auto InputSubsystem =
-        ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
-    checkf(InputSubsystem, TEXT("AAvatarController::OnPossess: InputSubsystem is nullptr."));
-
-    // Clear all prior mappings and add the InputMappingContext
-    checkf(InputMappingContext, TEXT("AAvatarController::OnPossess: InputMappingContext is nullptr."));
-    InputSubsystem->ClearAllMappings();
-    InputSubsystem->AddMappingContext(InputMappingContext, 0);
-    
-    // Bind the move action functions if set in the editor
-    if (ActionMove) {
-        EnhancedInputComponent->BindAction(
-            ActionMove, ETriggerEvent::Triggered, this, &AAvatarControllerBase::HandleMove);
-    }
-
-    // Bind the look action functions if set in the editor
-    if (ActionLook) {
-        EnhancedInputComponent->BindAction(
-            ActionLook, ETriggerEvent::Triggered, this, &AAvatarControllerBase::HandleLook);
-    }
+    ConfigureInputMapping();
+    BindInputActions();
 }
 
 void AAvatarControllerBase::OnUnPossess() {
-    EnhancedInputComponent->ClearActionBindings(); 
+    if (EnhancedInputComponent) {
+        EnhancedInputComponent->ClearActionBindings();
+    }
     Super::OnUnPossess();
 }
 
-void AAvatarControllerBase::HandleLook(const FInputActionValue& InputActionValue) {
-    const FVector2D LookVector = InputActionValue.Get<FVector2D>();
+void AAvatarControllerBase::HandleMoveXY(const FInputActionValue& InputActionValue) {
+    // Log to screen the value of the input action
+    GEngine->AddOnScreenDebugMessage(
+        -1, 1.f, FColor::Green, FString::Printf(TEXT("MoveXY: %s"), *InputActionValue.ToString()));
 
-    // Add yaw and pitch input to controller. 
-    AddYawInput(LookVector.X);
-    AddPitchInput(LookVector.Y);
+    const FVector2D MovementVector = InputActionValue.Get<FVector2D>();
+    SpaceCobotAvatar->AddMovementInput(GetDirVec(EAxis::X), MovementVector.Y);
+    SpaceCobotAvatar->AddMovementInput(GetDirVec(EAxis::Y), MovementVector.X);
 }
 
+void AAvatarControllerBase::HandleMoveZ(const FInputActionValue& InputActionValue) {
+    const float MovementValue = InputActionValue.Get<float>();
+    SpaceCobotAvatar->AddMovementInput(GetDirVec(EAxis::Z), MovementValue);
+}
 
-void AAvatarControllerBase::HandleMove(const FInputActionValue& InputActionValue) {
-    // Get input value.
-    const FVector2d MovementVector = InputActionValue.Get<FVector2d>();
+void AAvatarControllerBase::HandleRotateXY(const FInputActionValue& InputActionValue) {
+    const FVector2D RotationVector = InputActionValue.Get<FVector2D>();
+    const FRotator CameraYawRotation(0.0f, SpaceCobotAvatar->CameraComp->GetComponentRotation().Yaw, 0.0f);
+    const FRotationMatrix YawMatrix(CameraYawRotation);
 
-    // Add movement to SpaceCobotAvatar pawn in world frame.
-    SpaceCobotAvatar->AddMovementInput(
-        FVector(1.0f, 0.0f, 0.0f), MovementVector.Y);
-    SpaceCobotAvatar->AddMovementInput(
-        FVector(0.0f, 1.0f, 0.0f), MovementVector.X);
+    const FVector ForwardDirection = YawMatrix.GetUnitAxis(EAxis::X);
+    const FVector RightDirection = YawMatrix.GetUnitAxis(EAxis::Y);
+
+    SpaceCobotAvatar->AddControllerRollInput(RotationVector.X);
+    SpaceCobotAvatar->AddControllerPitchInput(RotationVector.Y);
+}
+
+void AAvatarControllerBase::HandleRotateZ(const FInputActionValue& InputActionValue) {
+    const float RotationValue = InputActionValue.Get<float>();
+    SpaceCobotAvatar->AddControllerYawInput(RotationValue);
+}
+
+void AAvatarControllerBase::ConfigureInputMapping() {
+    auto InputSubsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
+    checkf(InputSubsystem, TEXT("InputSubsystem is nullptr."));
+    checkf(InputMappingContext, TEXT("InputMappingContext is nullptr."));
+
+    InputSubsystem->ClearAllMappings();
+    InputSubsystem->AddMappingContext(InputMappingContext, 0);
+}
+
+void AAvatarControllerBase::BindInputActions() {
+    EnhancedInputComponent->BindAction(
+        ActionMoveXY, ETriggerEvent::Triggered, this, &AAvatarControllerBase::HandleMoveXY);
+    EnhancedInputComponent->BindAction(
+        ActionMoveZ, ETriggerEvent::Triggered, this, &AAvatarControllerBase::HandleMoveZ);
+    EnhancedInputComponent->BindAction(
+        ActionRotateXY, ETriggerEvent::Triggered, this, &AAvatarControllerBase::HandleRotateXY);
+    EnhancedInputComponent->BindAction(
+        ActionRotateZ, ETriggerEvent::Triggered, this, &AAvatarControllerBase::HandleRotateZ);
+}
+
+FVector AAvatarControllerBase::GetDirVec(const EAxis::Type Axis) const {
+    switch (Axis) {
+        case EAxis::X:
+            return SpaceCobotAvatar->GetActorForwardVector();
+        case EAxis::Y:
+            return SpaceCobotAvatar->GetActorRightVector();
+        case EAxis::Z:
+            return SpaceCobotAvatar->GetActorUpVector();
+        default:
+            return FVector::ZeroVector;
+    }
 }

@@ -12,12 +12,13 @@ class UEnhancedInputComponent;
 class UInputMappingContext;
 
 /**
- * @brief Controller for the SpaceCobot's Avatar.
- * This class manages the input and interactions for the SpaceCobot's avatar (defined in the editor in Content/Input).
- * It builds on the PlayerController base class, adding enhanced input support for actions.
+ * @brief Base class for the SpaceCobot Avatar Controller.
+ * 
+ * This controller manages inputs and interactions for the SpaceCobot Avatar (located in /Core/Input). 
+ * It binds input actions to gameplay logic and is extended via Blueprints (e.g., BP_AvatarController).
  * 
  * References:
- * - UE5 Documentation: https://dev.epicgames.com/documentation/en-us/unreal-engine/enhanced-input-in-unreal-engine
+ * - UE5 Enhanced Input System: https://dev.epicgames.com/documentation/en-us/unreal-engine/enhanced-input-in-unreal-engine
  * - YouTube Tutorial: https://www.youtube.com/watch?v=GyxIqgith_M
  */
 UCLASS(Abstract)
@@ -25,45 +26,58 @@ class SPACECOBOT_TELEOP_API AAvatarControllerBase : public APlayerController {
     GENERATED_BODY()
 
 public:
-    // Bind to move action blueprint
+    // Input Actions
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input|Movement")
-    UInputAction* ActionMove = nullptr;
-
-    // Bind to look action blueprint
-    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input|Movement")
-    UInputAction* ActionLook = nullptr;
+    TObjectPtr<UInputAction> ActionMoveXY = nullptr;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input|Movement")
+    TObjectPtr<UInputAction> ActionMoveZ = nullptr;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input|Movement")
+    TObjectPtr<UInputAction> ActionRotateXY = nullptr;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input|Movement")
+    TObjectPtr<UInputAction> ActionRotateZ = nullptr;
+
+    // Input Mapping Context
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input|Mapping")
     TObjectPtr<UInputMappingContext> InputMappingContext = nullptr;
+
 protected:
     /**
-     * Called when the controller possesses a Pawn.
-     * @param InPawn The pawn being possessed.
+     * @brief Called when the controller takes possession of a Pawn.
+     * @param InPawn The Pawn being possessed.
      */
     virtual void OnPossess(APawn* InPawn) override;
 
     /**
-     * Called when the controller un-possesses a Pawn.
+     * @brief Called when the controller releases possession of a Pawn.
      */
     virtual void OnUnPossess() override;
 
-    /**
-     * Handle the look action.
-     * TODO: Change this function from avatar to camera. 
-     * @param InputActionValue The input action value.
-     */
-    void HandleLook(const FInputActionValue& InputActionValue);
-
-    /**
-     * Handle the move action.
-     * @param InputActionValue The input action value.
-     */
-    void HandleMove(const FInputActionValue& InputActionValue);
-
 private:
+    // References to controlled components
     UPROPERTY()
-    UEnhancedInputComponent* EnhancedInputComponent = nullptr; // Ref to EnhancedInputComponent to bind actions 
-    
+    TObjectPtr<UEnhancedInputComponent> EnhancedInputComponent = nullptr;
+
     UPROPERTY()
-    ASpaceCobotAvatar* SpaceCobotAvatar = nullptr; // Ref to SpacedCobotAvatar pawn to control it
+    TObjectPtr<ASpaceCobotAvatar> SpaceCobotAvatar = nullptr;
+
+    // Input Handlers
+    void HandleMoveXY(const FInputActionValue& InputActionValue);
+    void HandleMoveZ(const FInputActionValue& InputActionValue);
+    void HandleRotateXY(const FInputActionValue& InputActionValue);
+    void HandleRotateZ(const FInputActionValue& InputActionValue);
+
+    // Helper Methods
+    void ConfigureInputMapping();
+    void BindInputActions();
+
+    /**
+     * @brief Gets the direction vector for the specified axis.
+     * 
+     * @param Axis The axis to retrieve the direction vector for.
+     * @return FVector The direction vector.
+     */
+    FVector GetDirVec(const EAxis::Type Axis) const;
 };
