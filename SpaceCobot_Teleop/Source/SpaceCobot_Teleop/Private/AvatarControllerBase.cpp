@@ -27,7 +27,6 @@ void AAvatarControllerBase::OnUnPossess() {
 }
 
 void AAvatarControllerBase::HandleMoveXY(const FInputActionValue& InputActionValue) {
-    // Log to screen the value of the input action
     GEngine->AddOnScreenDebugMessage(
         -1, 1.f, FColor::Green, FString::Printf(TEXT("MoveXY: %s"), *InputActionValue.ToString()));
 
@@ -37,25 +36,41 @@ void AAvatarControllerBase::HandleMoveXY(const FInputActionValue& InputActionVal
 }
 
 void AAvatarControllerBase::HandleMoveZ(const FInputActionValue& InputActionValue) {
+    GEngine->AddOnScreenDebugMessage(
+        -1, 1.f, FColor::Green, FString::Printf(TEXT("MoveZ: %s"), *InputActionValue.ToString()));
+
     const float MovementValue = InputActionValue.Get<float>();
     SpaceCobotAvatar->AddMovementInput(GetDirVec(EAxis::Z), MovementValue);
 }
 
 void AAvatarControllerBase::HandleRotateXY(const FInputActionValue& InputActionValue) {
     const FVector2D RotationVector = InputActionValue.Get<FVector2D>();
-    const FRotator CameraYawRotation(0.0f, SpaceCobotAvatar->CameraComp->GetComponentRotation().Yaw, 0.0f);
-    const FRotationMatrix YawMatrix(CameraYawRotation);
 
-    const FVector ForwardDirection = YawMatrix.GetUnitAxis(EAxis::X);
-    const FVector RightDirection = YawMatrix.GetUnitAxis(EAxis::Y);
+    // Get the camera's rotation and isolate the yaw
+    const FRotator CameraRotation = SpaceCobotAvatar->CameraComp->GetComponentRotation();
+    const FRotator CameraYawRotation(0.0f, CameraRotation.Yaw, 0.0f);
 
-    SpaceCobotAvatar->AddControllerRollInput(RotationVector.X);
-    SpaceCobotAvatar->AddControllerPitchInput(RotationVector.Y);
+    // Compute world-aligned rotation vectors
+    const FVector WorldPitchAxis = CameraYawRotation.RotateVector(FVector::RightVector); // X-Axis
+    const FVector WorldYawAxis = CameraYawRotation.RotateVector(FVector::UpVector); // Z-Axis
+
+    // Apply pitch and yaw relative to the camera's yaw rotation
+    SpaceCobotAvatar->AddActorWorldRotation(FRotator(RotationVector.Y, 0, 0)); // Pitch
+    SpaceCobotAvatar->AddActorWorldRotation(FQuat(WorldYawAxis, FMath::DegreesToRadians(RotationVector.X))); // Yaw
 }
 
 void AAvatarControllerBase::HandleRotateZ(const FInputActionValue& InputActionValue) {
     const float RotationValue = InputActionValue.Get<float>();
-    SpaceCobotAvatar->AddControllerYawInput(RotationValue);
+
+    // Get the camera's rotation and isolate the yaw
+    const FRotator CameraRotation = SpaceCobotAvatar->CameraComp->GetComponentRotation();
+    const FRotator CameraYawRotation(0.0f, CameraRotation.Yaw, 0.0f);
+
+    // Compute the world-aligned roll axis
+    const FVector WorldRollAxis = CameraYawRotation.RotateVector(FVector::ForwardVector); // Y-Axis
+
+    // Apply roll relative to the camera's yaw rotation
+    SpaceCobotAvatar->AddActorWorldRotation(FQuat(WorldRollAxis, FMath::DegreesToRadians(RotationValue)));
 }
 
 void AAvatarControllerBase::ConfigureInputMapping() {
@@ -79,13 +94,18 @@ void AAvatarControllerBase::BindInputActions() {
 }
 
 FVector AAvatarControllerBase::GetDirVec(const EAxis::Type Axis) const {
+    // Get the camera's rotation and only keep the yaw component 
+    const FRotator CameraRotation = SpaceCobotAvatar->CameraComp->GetComponentRotation();
+    const FRotator CompensatedRotation(0.0f, CameraRotation.Yaw, 0.0f);
+
+    // Apply the compensating rotation to the vector on specified axis
     switch (Axis) {
         case EAxis::X:
-            return SpaceCobotAvatar->GetActorForwardVector();
+            return CompensatedRotation.RotateVector(FVector(1, 0, 0));
         case EAxis::Y:
-            return SpaceCobotAvatar->GetActorRightVector();
+            return CompensatedRotation.RotateVector(FVector(0, 1, 0));
         case EAxis::Z:
-            return SpaceCobotAvatar->GetActorUpVector();
+            return CompensatedRotation.RotateVector(FVector(0, 0, 1));
         default:
             return FVector::ZeroVector;
     }

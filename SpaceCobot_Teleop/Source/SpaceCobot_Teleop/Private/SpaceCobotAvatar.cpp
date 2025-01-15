@@ -1,6 +1,7 @@
 #include "SpaceCobotAvatar.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values
 ASpaceCobotAvatar::ASpaceCobotAvatar() {
@@ -20,6 +21,10 @@ ASpaceCobotAvatar::ASpaceCobotAvatar() {
 
 void ASpaceCobotAvatar::BeginPlay() {
     Super::BeginPlay();
+
+    // Disable gravity and set movement mode to flying
+    GetCharacterMovement()->GravityScale = 0.0f;
+    GetCharacterMovement()->SetMovementMode(MOVE_Flying);
 }
 
 

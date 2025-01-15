@@ -9,15 +9,11 @@
   <component name="ChangeListManager">
     <list default="true" id="78073983-5378-4c11-a1b6-6a8e315473bd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceCobot_Teleop.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpaceCobot_Teleop.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Core/GameModeSandbox.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Core/GameModeSandbox.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/AvatarController.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Core/BP_SpaceCobotAvatar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Core/BP_SpaceCobotAvatar.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Input/DefaultMappingContext.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/DefaultMappingContext.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/Look.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/Sandbox.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Sandbox.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Private/AvatarControllerBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Private/AvatarControllerBase.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Private/SpaceCobotAvatar.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Private/SpaceCobotAvatar.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Public/AvatarControllerBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Public/AvatarControllerBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Public/SpaceCobotAvatar.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Public/SpaceCobotAvatar.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +30,10 @@
     <setting file="file://$USER_HOME$/Applications/Linux_Unreal_Engine_5.5.1/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Public/EnhancedInputComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Applications/Linux_Unreal_Engine_5.5.1/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Public/InputTriggers.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Applications/Linux_Unreal_Engine_5.5.1/Engine/Source/Runtime/Core/Public/Math/Axis.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Applications/Linux_Unreal_Engine_5.5.1/Engine/Source/Runtime/Core/Public/Math/MathFwd.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Applications/Linux_Unreal_Engine_5.5.1/Engine/Source/Runtime/Engine/Classes/Components/InputComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Applications/Linux_Unreal_Engine_5.5.1/Engine/Source/Runtime/Engine/Classes/GameFramework/Pawn.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Applications/Linux_Unreal_Engine_5.5.1/Engine/Source/Runtime/Engine/Private/Pawn.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SpaceCobot_Teleop/Private/SpaceCobotAvatar.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SpaceCobot_Teleop/Public/SpaceCobotAvatar.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -221,7 +220,7 @@
       <workItem from="1736867893183" duration="11981000" />
       <workItem from="1736887298138" duration="5466000" />
       <workItem from="1736941544408" duration="7807000" />
-      <workItem from="1736954112044" duration="5402000" />
+      <workItem from="1736954112044" duration="10314000" />
     </task>
     <servers />
   </component>
