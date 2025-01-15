@@ -44,34 +44,28 @@ void AAvatarControllerBase::HandleMoveZ(const FInputActionValue& InputActionValu
 }
 
 void AAvatarControllerBase::HandleRotateXY(const FInputActionValue& InputActionValue) {
-    const FVector2D RotationVector = InputActionValue.Get<FVector2D>();
+    // Get current actor rotation
+    FRotator ActorRotation = SpaceCobotAvatar->GetActorRotation();
 
-    // Get the camera's rotation and isolate the yaw
-    const FRotator CameraRotation = SpaceCobotAvatar->CameraComp->GetComponentRotation();
-    const FRotator CameraYawRotation(0.0f, CameraRotation.Yaw, 0.0f);
+    // Extract x (pitch increment) and y (roll increment) from the input value
+    const auto InputValue = InputActionValue.Get<FVector2D>();
+    const float DeltaPitch = InputValue.Y;
+    const float DeltaRoll = InputValue.X;
 
-    // Compute world-aligned rotation vectors
-    const FVector WorldPitchAxis = CameraYawRotation.RotateVector(FVector::RightVector); // X-Axis
-    const FVector WorldYawAxis = CameraYawRotation.RotateVector(FVector::UpVector); // Z-Axis
+    // Update the dominant rotation component (pitch or roll) to simplify the control
+    (FMath::Abs(DeltaRoll) > FMath::Abs(DeltaPitch) ? ActorRotation.Roll : ActorRotation.Pitch) += 
+        (FMath::Abs(DeltaRoll) > FMath::Abs(DeltaPitch) ? DeltaRoll : DeltaPitch);
 
-    // Apply pitch and yaw relative to the camera's yaw rotation
-    SpaceCobotAvatar->AddActorWorldRotation(FRotator(RotationVector.Y, 0, 0)); // Pitch
-    SpaceCobotAvatar->AddActorWorldRotation(FQuat(WorldYawAxis, FMath::DegreesToRadians(RotationVector.X))); // Yaw
+    // Set the new rotation for the actor
+    SpaceCobotAvatar->SetActorRotation(ActorRotation);
 }
+
 
 void AAvatarControllerBase::HandleRotateZ(const FInputActionValue& InputActionValue) {
     const float RotationValue = InputActionValue.Get<float>();
-
-    // Get the camera's rotation and isolate the yaw
-    const FRotator CameraRotation = SpaceCobotAvatar->CameraComp->GetComponentRotation();
-    const FRotator CameraYawRotation(0.0f, CameraRotation.Yaw, 0.0f);
-
-    // Compute the world-aligned roll axis
-    const FVector WorldRollAxis = CameraYawRotation.RotateVector(FVector::ForwardVector); // Y-Axis
-
-    // Apply roll relative to the camera's yaw rotation
-    SpaceCobotAvatar->AddActorWorldRotation(FQuat(WorldRollAxis, FMath::DegreesToRadians(RotationValue)));
+    SpaceCobotAvatar->AddControllerYawInput(RotationValue);
 }
+
 
 void AAvatarControllerBase::ConfigureInputMapping() {
     auto InputSubsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
