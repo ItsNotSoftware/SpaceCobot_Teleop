@@ -7,12 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78073983-5378-4c11-a1b6-6a8e315473bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceCobot_Teleop.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpaceCobot_Teleop.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Core/BP_SpaceCobotAvatar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Core/BP_SpaceCobotAvatar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/Sandbox.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Sandbox.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Private/AvatarControllerBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceCobot_Teleop/Private/AvatarControllerBase.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="78073983-5378-4c11-a1b6-6a8e315473bd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,7 +213,7 @@
       <workItem from="1736867893183" duration="11981000" />
       <workItem from="1736887298138" duration="5466000" />
       <workItem from="1736941544408" duration="7807000" />
-      <workItem from="1736954112044" duration="13630000" />
+      <workItem from="1736954112044" duration="13818000" />
     </task>
     <servers />
   </component>
